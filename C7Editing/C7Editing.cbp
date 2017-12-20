@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="C7Editing" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/C7Editing" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="" />
+				<Option object_output="obj/Debug/" />
+				<Option type="2" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Compiler>
+					<Add option="-Wall" />
+					<Add option="-g" />
+					<Add directory="base" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/C7Editing" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="" />
+				<Option object_output="obj/Release/" />
+				<Option type="2" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Compiler>
+					<Add option="-Wall" />
+					<Add option="-O2" />
+					<Add directory="base" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-std=c++11" />
+		</Compiler>
+		<Unit filename="base/c7base.h" />
+		<Unit filename="base/c7buffer.cpp" />
+		<Unit filename="base/c7buffer.h" />
+		<Unit filename="base/c7membuffer.cpp" />
+		<Unit filename="base/c7membuffer.h" />
+		<Unit filename="base/c7obj.cpp" />
+		<Unit filename="base/c7obj.h" />
+		<Unit filename="base/c7oclbuffer.cpp" />
+		<Unit filename="base/c7oclbuffer.h" />
+		<Unit filename="c7editing.h" />
+		<Unit filename="main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

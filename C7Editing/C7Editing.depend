@@ -1,0 +1,27 @@
+# depslib dependency file v1.0
+1513789514 source:c:\users\34973\onedrive\work\c7es\c7editing\base\c7buffer.cpp
+	"c7buffer.h"
+
+1513790405 c:\users\34973\onedrive\work\c7es\c7editing\base\c7buffer.h
+	<C7Obj.h>
+
+1513786308 c:\users\34973\onedrive\work\c7es\c7editing\base\c7obj.h
+	<memory>
+
+1513786308 source:c:\users\34973\onedrive\work\c7es\c7editing\base\c7obj.cpp
+	"c7obj.h"
+
+1446667746 source:c:\users\34973\onedrive\work\c7es\c7editing\main.c
+
+1513790406 source:c:\users\34973\onedrive\work\c7es\c7editing\base\c7membuffer.cpp
+	"c7membuffer.h"
+
+1513790405 c:\users\34973\onedrive\work\c7es\c7editing\base\c7membuffer.h
+	"C7Buffer.h"
+
+1513790406 source:c:\users\34973\onedrive\work\c7es\c7editing\base\c7oclbuffer.cpp
+	"c7oclbuffer.h"
+
+1513790406 c:\users\34973\onedrive\work\c7es\c7editing\base\c7oclbuffer.h
+	"C7Buffer.h"
+
