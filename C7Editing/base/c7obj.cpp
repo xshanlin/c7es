@@ -1,6 +1,7 @@
 #include "c7obj.h"
 
-C7Obj::C7Obj() {
+C7Obj::C7Obj(std::weak_ptr<C7Obj> outerObj)
+    : m_outerObj(outerObj) {
     //ctor
 }
 
@@ -21,9 +22,9 @@ void* C7Obj::po(const char* riid) {
         if (ret == nullptr) {
 
             // 内聚的接口
-            std::shared_ptr<C7Obj> outer = this->Outer();
+            std::shared_ptr<C7Obj> outer = m_outerObj.lock();
             if (outer != nullptr) {
-                ret = this->Outer()->po1(riid);
+                ret = outer->po1(riid);
             }
         }
     }
@@ -32,9 +33,5 @@ void* C7Obj::po(const char* riid) {
 }
 
 void* C7Obj::po1(const char* riid) {
-    return nullptr;
-}
-
-std::shared_ptr<C7Obj> C7Obj::Outer() {
     return nullptr;
 }

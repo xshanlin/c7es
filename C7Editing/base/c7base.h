@@ -5,5 +5,7 @@
 #include "c7buffer.h"
 #include "c7membuffer.h"
 #include "c7oclbuffer.h"
+#include "c7membuffer2d.h"
+#include "c7oclbuffer2d.h"
 
 #endif // C7BASE_H

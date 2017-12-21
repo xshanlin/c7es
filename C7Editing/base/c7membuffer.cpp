@@ -1,5 +1,9 @@
 #include "c7membuffer.h"
 
+PO1_IMPLEMENTATION_BEGIN(C7MemBuffer, RIID_C7MEMBUFFER)
+PO1_ITEM_IMPLEMENTATION(C7BufferIO, RIID_C7BUFFER_IO)
+PO1_IMPLEMENTATION_END(C7Buffer)
+
 C7MemBuffer::C7MemBuffer(std::weak_ptr<C7Obj> outerObj)
     : C7Buffer(outerObj) {
     //ctor
@@ -40,16 +44,4 @@ uint32_t C7MemBuffer::Write(const char* buffer, const uint32_t numofbytes) {
     return 0;
 }
 
-void* C7MemBuffer::po1(const char* riid) {
-    void* ret = nullptr;
-
-    if (riid == RIID_C7MEMBUFFER) {
-        ret = (C7MemBuffer*)this;
-    } else if (riid == RIID_C7BUFFER_IO) {
-        ret = (C7BufferIO*)this;
-    } else {
-        ret = C7Buffer::po1(riid);
-    }
-    return ret;
-}
 

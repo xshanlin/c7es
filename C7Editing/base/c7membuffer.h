@@ -6,6 +6,9 @@
 const char* RIID_C7MEMBUFFER = "{AC9F567C-96B1-405E-ABAC-B63A4DAF0A1E}";
 
 class C7MemBuffer : public C7Buffer, public C7BufferIO {
+
+    PO1_DECLARATION
+
 public:
     C7MemBuffer(std::weak_ptr<C7Obj> outerObj);
     virtual ~C7MemBuffer();
@@ -21,9 +24,6 @@ public:
     virtual int32_t InitWithData(const uint32_t numofbytes, const char initData);
     virtual uint32_t Read(char* buffer, const uint32_t numofbytes);
     virtual uint32_t Write(const char* buffer, const uint32_t numofbytes);
-
-protected:
-    virtual void* po1(const char* riid);
 
 private:
 };

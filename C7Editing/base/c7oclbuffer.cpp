@@ -1,5 +1,9 @@
 #include "c7oclbuffer.h"
 
+PO1_IMPLEMENTATION_BEGIN(C7OCLBuffer, RIID_C7OCLBUFFER)
+PO1_ITEM_IMPLEMENTATION(C7BufferIO, RIID_C7BUFFER_IO)
+PO1_IMPLEMENTATION_END(C7Buffer)
+
 C7OCLBuffer::C7OCLBuffer(std::weak_ptr<C7Obj> outerObj)
     : C7Buffer(outerObj) {
     //ctor
@@ -39,17 +43,3 @@ uint32_t C7OCLBuffer::Read(char* buffer, const uint32_t numofbytes) {
 uint32_t C7OCLBuffer::Write(const char* buffer, const uint32_t numofbytes) {
     return 0;
 }
-
-void* C7OCLBuffer::po1(const char* riid) {
-    void* ret = nullptr;
-
-    if(riid == RIID_C7OCLBUFFER) {
-        ret = (C7OCLBuffer*)this;
-    } else if (riid == RIID_C7BUFFER_IO) {
-        ret = (C7BufferIO*)this;
-    } else {
-        ret = C7Buffer::po1(riid);
-    }
-    return ret;
-}
-

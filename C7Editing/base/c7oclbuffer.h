@@ -6,6 +6,9 @@
 const char* RIID_C7OCLBUFFER = "{D1DD6429-A55C-4AC1-910D-5B454FC9258A}";
 
 class C7OCLBuffer : public C7Buffer, public C7BufferIO {
+
+    PO1_DECLARATION
+
 public:
     C7OCLBuffer(std::weak_ptr<C7Obj> outerObj);
     virtual ~C7OCLBuffer();
@@ -21,9 +24,6 @@ public:
     virtual int32_t InitWithData(const uint32_t numofbytes, const char initData);
     virtual uint32_t Read(char* buffer, const uint32_t numofbytes);
     virtual uint32_t Write(const char* buffer, const uint32_t numofbytes);
-
-protected:
-    virtual void* po1(const char* riid);
 
 private:
 };

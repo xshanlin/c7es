@@ -13,11 +13,33 @@
 #define C7_SUCCEEDED(err)   ((err) >= C7_OK)
 #define C7_FAILED(err)      ((err) <= C7_E_FAIL)
 
+
+#define PO1_DECLARATION     protected: \
+                                virtual void* po1(const char* riid);
+
+#define PO1_IMPLEMENTATION_BEGIN(objClass, self_riid) \
+                                void* objClass::po1(const char* riid) { \
+                                    void* ret = nullptr; \
+                                    if (riid == (self_riid)) { \
+                                        ret = (objClass*)this;
+
+#define PO1_ITEM_IMPLEMENTATION(objClass, item_riid) \
+                                    } else if (riid == (item_riid)) { \
+                                        ret = (objClass*)this;
+
+#define PO1_IMPLEMENTATION_END(baseClass) \
+                                    } else { \
+                                        ret = baseClass::po1(riid); \
+                                    } \
+                                    return ret; \
+                                }
+
+
 const char* RIID_C7OBJ = "{BAD141BE-84B7-413C-AD72-E18093A44B28}";
 
 class C7Obj {
 public:
-    C7Obj();
+    C7Obj(std::weak_ptr<C7Obj> outerObj);
     virtual ~C7Obj();
 
 public:
@@ -27,7 +49,7 @@ protected:
     virtual void* po1(const char* riid);
 
 private:
-    virtual std::shared_ptr<C7Obj> Outer();
+    std::weak_ptr<C7Obj> m_outerObj;
 };
 
 #endif // C7OBJ_H

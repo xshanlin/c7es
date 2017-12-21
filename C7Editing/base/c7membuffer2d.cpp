@@ -1,5 +1,9 @@
 #include "c7membuffer2d.h"
 
+PO1_IMPLEMENTATION_BEGIN(C7MemBuffer2D, RIID_C7MEMBUFFER_2D)
+PO1_ITEM_IMPLEMENTATION(C7BufferIO2D, RIID_C7BUFFER_IO_2D)
+PO1_IMPLEMENTATION_END(C7Buffer)
+
 C7MemBuffer2D::C7MemBuffer2D(std::weak_ptr<C7Obj> outerObj)
     : C7Buffer(outerObj) {
     //ctor
@@ -40,16 +44,4 @@ uint32_t C7MemBuffer2D::Write(const char* buffer, const uint32_t cols, const uin
     return 0;
 }
 
-void* C7MemBuffer2D::po1(const char* riid) {
-    void* ret = nullptr;
-
-    if(riid == RIID_C7MEMBUFFER_2D) {
-        ret = (C7MemBuffer2D*)this;
-    } else if (riid == RIID_C7BUFFER_IO_2D) {
-        ret = (C7BufferIO2D*)this;
-    } else {
-        ret = C7Buffer::po1(riid);
-    }
-    return ret;
-}
 

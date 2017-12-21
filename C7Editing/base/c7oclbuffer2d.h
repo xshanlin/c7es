@@ -6,6 +6,9 @@
 const char* RIID_C7OCLBUFFER_2D = "{5A96F643-6D36-46E7-9014-1EE88C9FAD1A}";
 
 class C7OCLBuffer2D : public C7Buffer, public C7BufferIO2D {
+
+    PO1_DECLARATION
+
 public:
     C7OCLBuffer2D(std::weak_ptr<C7Obj> outerObj);
     virtual ~C7OCLBuffer2D();
@@ -21,9 +24,6 @@ public:
     virtual int32_t InitWithData(const uint32_t cols, const uint32_t rows, const char initData);
     virtual uint32_t Read(char* buffer, const uint32_t cols, const uint32_t rows, const uint32_t bytesPerRow);
     virtual uint32_t Write(const char* buffer, const uint32_t cols, const uint32_t rows, const uint32_t bytesPerRow);
-
-protected:
-    virtual void* po1(const char* riid);
 
 private:
 };
