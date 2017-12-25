@@ -12,16 +12,11 @@ C7Obj::~C7Obj() {
 void* C7Obj::po(const char* riid) {
     void* ret = nullptr;
 
-    // 基础的接口
     if (riid == RIID_C7OBJ) {
         ret = (C7Obj*)this;
     } else {
-
-        // 扩展的接口
         ret = this->po1(riid);
         if (ret == nullptr) {
-
-            // 内聚的接口
             std::shared_ptr<C7Obj> outer = m_outerObj.lock();
             if (outer != nullptr) {
                 ret = outer->po1(riid);

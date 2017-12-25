@@ -17,6 +17,8 @@
 					<Add option="-Wall" />
 					<Add option="-g" />
 					<Add directory="base" />
+					<Add directory="timeline" />
+					<Add directory="data" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -30,6 +32,8 @@
 					<Add option="-Wall" />
 					<Add option="-O2" />
 					<Add directory="base" />
+					<Add directory="timeline" />
+					<Add directory="data" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -44,14 +48,26 @@
 		<Unit filename="base/c7buffer.h" />
 		<Unit filename="base/c7membuffer.cpp" />
 		<Unit filename="base/c7membuffer.h" />
+		<Unit filename="base/c7membuffer2d.cpp" />
+		<Unit filename="base/c7membuffer2d.h" />
 		<Unit filename="base/c7obj.cpp" />
 		<Unit filename="base/c7obj.h" />
 		<Unit filename="base/c7oclbuffer.cpp" />
 		<Unit filename="base/c7oclbuffer.h" />
-		<Unit filename="c7editing.h" />
-		<Unit filename="main.c">
-			<Option compilerVar="CC" />
+		<Unit filename="base/c7oclbuffer2d.cpp" />
+		<Unit filename="base/c7oclbuffer2d.h" />
+		<Unit filename="base/c7singleton.h">
+			<Option compile="1" />
 		</Unit>
+		<Unit filename="c7editing.h" />
+		<Unit filename="data/c7framedata.cpp" />
+		<Unit filename="data/c7framedata.h" />
+		<Unit filename="main.cpp" />
+		<Unit filename="timeline/c7renderobj.cpp" />
+		<Unit filename="timeline/c7renderobj.h" />
+		<Unit filename="timeline/c7timeline.h" />
+		<Unit filename="timeline/c7timelineobj.cpp" />
+		<Unit filename="timeline/c7timelineobj.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />
